@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 
@@ -18,8 +19,9 @@ baseRouter.post("/add", (req, res) => {
   res.json({ result: first + second });
 });
 
-baseRouter.post('/subtract', (req, res) => {
-    res.json({ "": null });
+baseRouter.post("/subtract", (req, res) => {
+  const { first, second } = req.body;
+  res.json({ result: first - second });
 });
 
 app.use(baseUrl, baseRouter);
